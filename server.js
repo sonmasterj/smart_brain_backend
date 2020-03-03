@@ -84,6 +84,6 @@ app.put('/image',(req,res)=>{
     })
     .catch(err=>res.status(400).json('no id found'));
 })
-app.listen(3001,()=>{
+app.listen(process.env.PORT||3001,()=>{
     console.log('app is running');
 })
