@@ -16,7 +16,7 @@ const db=knex({
     }
 });
 app.get('/',(req,res)=>{
-    res.json(database.users);
+    res.send("it is working");
 })
 app.post('/signin',(req,res)=>{
     const {email,password}=req.body;
@@ -84,6 +84,6 @@ app.put('/image',(req,res)=>{
     })
     .catch(err=>res.status(400).json('no id found'));
 })
-app.listen(3001,()=>{
+app.listen(process.env.PORT||3001,()=>{
     console.log('app is running');
 })
